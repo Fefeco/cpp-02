@@ -6,21 +6,23 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:56 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/06 19:07:11 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:47:33 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 class Fixed {
 
 public:
-	Fixed( void );
-	Fixed( Fixed& other );
-	Fixed& operator=( Fixed& other );
-	~Fixed( void );
-	int		getRawBits( void );
-	void	setRawBits( int const raw );
+  Fixed(void);
+  ~Fixed(void);
+
+  Fixed(const Fixed &other);
+  Fixed &operator=(const Fixed &other);
+
+  int getRawBits(void) const;
+  void setRawBits(const int raw);
 
 private:
-	static const int	width = 8;
-	int					fixedPoint;
+  static const int width = 8;
+  int fixedPoint;
 };
