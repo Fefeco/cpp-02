@@ -6,9 +6,13 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:56 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/12 13:20:28 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:45:43 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include <ostream>
 
 class Fixed {
 
@@ -32,4 +36,4 @@ private:
   int fixedPoint;
 };
 
-std::ostream &operator<<(const std::ostream &stream, const Fixed &fixed);
+std::ostream &operator<<(std::ostream &stream, const Fixed &fixed);
