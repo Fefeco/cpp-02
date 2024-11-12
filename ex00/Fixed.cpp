@@ -6,11 +6,11 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:59 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/12 12:50:47 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:56:11 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Fixed.h"
 
 #include <iostream>
 
