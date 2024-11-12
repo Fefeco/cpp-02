@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 10:12:56 by fcarranz          #+#    #+#              #
-#    Updated: 2024/11/12 13:08:50 by fcarranz         ###   ########.fr        #
+#    Updated: 2024/11/12 13:47:11 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 OBJ_FLAGS = $(CFLAGS) -MMD -g -c
 
-SRC=main.cpp
+SRC=main.cpp \
+	Fixed.cpp
 
 OBJ=$(SRC:.cpp=.o)
 DEP=$(SRC:.cpp=.d)
