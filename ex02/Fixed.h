@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:56 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/13 12:30:45 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:39:16 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ public:
   Fixed &operator--();
   Fixed operator--(int);
 
-  Fixed &min(Fixed &A, Fixed &B);
-  Fixed &min(const Fixed &A, const Fixed &B);
-  Fixed &max(Fixed &A, Fixed &B);
-  Fixed &max(const Fixed &A, const Fixed &B);
+  static Fixed &min(Fixed &A, Fixed &B);
+  static Fixed &min(const Fixed &A, const Fixed &B);
+  static Fixed &max(Fixed &A, Fixed &B);
+  static Fixed &max(const Fixed &A, const Fixed &B);
 
   Fixed(const int nb);
   Fixed(const float nb);
