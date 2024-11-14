@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:22:38 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/14 13:50:09 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:50:26 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,29 @@ Fixed Fixed::operator/(const Fixed &rhs) const {
   Fixed res;
   res.setRawBits(((int64_t)this->getRawBits() * (1 << width)) / rhs.getRawBits());
   return res;
+}
+
+/*
+Increment an decrement postfix and prefix overload
+*/
+Fixed& Fixed::operator++() {
+  this->fixedPoint++;
+  return *this;
+}
+
+Fixed Fixed::operator++(int) {
+  Fixed tmp(*this);
+  ++(*this);
+  return tmp;
+}
+
+Fixed& Fixed::operator--() {
+  this->fixedPoint--;
+  return *this;;
+}
+
+Fixed Fixed::operator--(int) {
+  Fixed tmp(*this);
+  --(*this);
+  return tmp;
 }
