@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:22:38 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/14 13:28:50 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:50:09 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,31 @@ bool Fixed::operator==(const Fixed &rhs) const {
 
 bool Fixed::operator!=(const Fixed &rhs) const {
   return getRawBits() != rhs.getRawBits();
+}
+
+/*
+Arithmetic operators
+*/
+Fixed Fixed::operator+(const Fixed &rhs) const {
+  Fixed res;
+  res.setRawBits(getRawBits() + rhs.getRawBits());
+  return res;
+}
+
+Fixed Fixed::operator-(const Fixed &rhs) const {
+  Fixed res;
+  res.setRawBits(getRawBits() - rhs.getRawBits());
+  return res;
+}
+
+Fixed Fixed::operator*(const Fixed &rhs) const {
+  Fixed res;
+  res.setRawBits(roundf(((int64_t)this->getRawBits() * (int64_t)rhs.getRawBits()) / (1 << width)));
+  return res;
+}
+
+Fixed Fixed::operator/(const Fixed &rhs) const {
+  Fixed res;
+  res.setRawBits(((int64_t)this->getRawBits() * (1 << width)) / rhs.getRawBits());
+  return res;
 }
