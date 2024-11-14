@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:22:38 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/14 13:50:26 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:06:22 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,27 @@ Fixed Fixed::operator--(int) {
   Fixed tmp(*this);
   --(*this);
   return tmp;
+}
+
+/*
+Static member functions
+*/
+Fixed& Fixed::min(Fixed &A, Fixed &B) {
+  if (A <= B) return A;
+  else return B;
+}
+
+const Fixed& Fixed::min(const Fixed &A, const Fixed &B) {
+  if (A <= B) return A;
+  else return B;
+}
+
+Fixed& Fixed::max(Fixed &A, Fixed &B) {
+  if (A >= B) return A;
+  else return B;
+}
+
+const Fixed& Fixed::max(const Fixed &A, const Fixed &B) {
+  if (A >= B) return A;
+  else return B;
 }
