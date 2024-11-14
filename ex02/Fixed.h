@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:56 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/14 14:02:32 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/14 19:51:10 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 
   Fixed(const Fixed &other);
   Fixed &operator=(const Fixed &other);
-  
+
   bool operator>(const Fixed &other) const;
   bool operator<(const Fixed &other) const;
   bool operator>=(const Fixed &other) const;

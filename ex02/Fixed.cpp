@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:22:38 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/11/14 14:06:22 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/11/14 19:50:41 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,23 @@ Fixed Fixed::operator-(const Fixed &rhs) const {
 
 Fixed Fixed::operator*(const Fixed &rhs) const {
   Fixed res;
-  res.setRawBits(roundf(((int64_t)this->getRawBits() * (int64_t)rhs.getRawBits()) / (1 << width)));
+  res.setRawBits(
+      roundf(((int64_t)this->getRawBits() * (int64_t)rhs.getRawBits()) /
+             (1 << width)));
   return res;
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const {
   Fixed res;
-  res.setRawBits(((int64_t)this->getRawBits() * (1 << width)) / rhs.getRawBits());
+  res.setRawBits(((int64_t)this->getRawBits() * (1 << width)) /
+                 rhs.getRawBits());
   return res;
 }
 
 /*
 Increment an decrement postfix and prefix overload
 */
-Fixed& Fixed::operator++() {
+Fixed &Fixed::operator++() {
   this->fixedPoint++;
   return *this;
 }
@@ -125,9 +128,9 @@ Fixed Fixed::operator++(int) {
   return tmp;
 }
 
-Fixed& Fixed::operator--() {
+Fixed &Fixed::operator--() {
   this->fixedPoint--;
-  return *this;;
+  return *this;
 }
 
 Fixed Fixed::operator--(int) {
@@ -139,22 +142,30 @@ Fixed Fixed::operator--(int) {
 /*
 Static member functions
 */
-Fixed& Fixed::min(Fixed &A, Fixed &B) {
-  if (A <= B) return A;
-  else return B;
+Fixed &Fixed::min(Fixed &A, Fixed &B) {
+  if (A <= B)
+    return A;
+  else
+    return B;
 }
 
-const Fixed& Fixed::min(const Fixed &A, const Fixed &B) {
-  if (A <= B) return A;
-  else return B;
+const Fixed &Fixed::min(const Fixed &A, const Fixed &B) {
+  if (A <= B)
+    return A;
+  else
+    return B;
 }
 
-Fixed& Fixed::max(Fixed &A, Fixed &B) {
-  if (A >= B) return A;
-  else return B;
+Fixed &Fixed::max(Fixed &A, Fixed &B) {
+  if (A >= B)
+    return A;
+  else
+    return B;
 }
 
-const Fixed& Fixed::max(const Fixed &A, const Fixed &B) {
-  if (A >= B) return A;
-  else return B;
+const Fixed &Fixed::max(const Fixed &A, const Fixed &B) {
+  if (A >= B)
+    return A;
+  else
+    return B;
 }
